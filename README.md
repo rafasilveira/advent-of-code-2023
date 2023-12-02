@@ -6,7 +6,7 @@ I'm going with Python just for fun. I like Python.
 
 ### Solutions
 - [Day 1: Trebuchet?!](./day01/)
-- [Day 2:]()
+- [Day 2: Cube Conundrum](./day02/)
 - [Day 3:]()
 - [Day 4:]()
 - [Day 5:]()
