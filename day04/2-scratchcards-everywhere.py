@@ -9,12 +9,6 @@ def prepare_line(line: str) -> tuple[int, set[int], set[int]]:
     contestants = set([int(x) for x in prepare_str(contestants)])
 
     card_id = int(card_id.split()[1])
-    
-    winners = []
-
-    for number in contestants:
-        if number in winning_numbers:
-            winners.append(number)
 
     return (card_id, winning_numbers, contestants)
 
@@ -29,28 +23,21 @@ def solution(file_path="input/puzzle.txt"):
             cards_list.append(parsed_line)
 
 
-    print("begin mapping cards")
     for index, card in enumerate(cards_list):
-        [card_id, winners, contestants] = card
-        print(f" mapping card {card_id}")
-    
+        [card_id, winners, contestants] = card    
         cards_map[card_id] = []
         wins = winners.intersection(contestants)
 
         for win_index in range(1, len(wins)+1):
             cards_map[card_id].append(cards_list[index + win_index])
-    print("end mapping cards")
 
-    print("begin counting cards")
     while len(cards_list) > 0:
 
-        card = cards_list.pop(0)
-        print(f" counting card {result}")
+        card = cards_list.pop()
         cards_list.extend(cards_map[card[0]])
         result += 1
     
     print(f"Total cards: {result}")
-    
 
 if __name__ == "__main__":
     solution()
