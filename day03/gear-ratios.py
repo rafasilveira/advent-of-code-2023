@@ -1,3 +1,5 @@
+# based on https://github.com/tomquinn8/AdventOfCode/blob/main/2023/Day3.py
+
 import re
 
 def solution(file_path="input/puzzle.txt"):
